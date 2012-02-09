@@ -9,17 +9,13 @@
       max-height:300px;
     }
     </style>
-    <script type="text/javascript">
-      // this value of baseUrl will be used on singly.com, the one set (later) in js/config.js
-      // will be used only for local development
-      var baseUrl = '';
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-    <script src="js/config.js" type="text/javascript"></script>
+    <script src="singly.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(function() {
+        var singly = new Singly({host:'lvh.me:8443'});
         // get some photos
-        $.getJSON(baseUrl + '/Me/photos', {limit: 10}, function(photos) {
+        singly.apiCall('/Me/photos', {limit: 10}, function(photos) {
           console.log('found ' + photos.length + ' photos');
           // add them to the DOM
           for(var i in photos) {
