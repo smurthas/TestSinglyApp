@@ -1,0 +1,12 @@
+{
+  "description": "See all my photos, but upside down!",
+  "repository": {
+    "title": "Upside Down Photos",
+    "type": "app",
+    "static": true,
+    "uses": {
+      "types": [ "photos" ],
+      "services": [ "facebook", "twitter", "foursquare", "instagram" ]
+    }
+  }
+}
